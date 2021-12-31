@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@500&family=Raleway:wght@500&family=Shizuru&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Oxygen', sans-serif;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height:100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 70%;
+    height: 80%;
+    display: flex;
+    background-color: #096ae4;
+    border-radius: 30px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container > h1 {
+    margin: 10px 20px;
+    font-size: 6vw;
+}
+
+.counter {
+    margin-bottom: 20px;
+}
+
+.counter > h2 {
+    font-size: 8vw;
+}
+
+.counter {
+    margin-bottom: 20px;
+}
+
+
+.buttons > button{
+    font-size: 2vw;
+    width: 11vw;
+    height: 5vh;
+    border-radius: 4px;
+    background-color: #2519B0;
+    color: white;
+    border: none;
+    cursor: pointer;
+}

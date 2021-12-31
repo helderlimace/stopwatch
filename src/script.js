@@ -20,16 +20,18 @@ function meter(){
 document.addEventListener('click', function(e){
     let el = e.target;
 
-    if(el.classList.contains('start')){
+    if(el.classList.contains('start') && interval === undefined){
         clock.classList.remove('pause');
         clearInterval(pause);
         meter();
     }
 
-    if(el.classList.contains('pause')){
-        pause = setInterval(function(){
-            clock.classList.contains('pause') ? clock.classList.remove('pause') : clock.classList.add('pause');
-        }, 500);
+    if(el.classList.contains('pause') && pause === undefined){
+        if(count > 1){
+            pause = setInterval(function(){
+                clock.classList.contains('pause') ? clock.classList.remove('pause') : clock.classList.add('pause');
+            }, 500);
+        }
         clearInterval(interval);
     }
 
@@ -37,6 +39,10 @@ document.addEventListener('click', function(e){
         clock.classList.remove('pause');
         clearInterval(interval);
         clearInterval(pause);
+        console.log(pause, interval);
+        interval = undefined;
+        pause = undefined;
+        console.log(pause, interval);
         count = 1;
         clock.innerHTML = '00:00:00';
     }

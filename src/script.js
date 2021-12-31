@@ -20,15 +20,19 @@ document.addEventListener('click', function(e){
     let el = e.target;
 
     if(el.classList.contains('start')){
+        clock.classList.remove('pause');
         meter();
     }
 
     if(el.classList.contains('pause')){
+        clock.classList.add('pause');
         clearInterval(interval);
     }
 
     if(el.classList.contains('restart')){
+        clock.classList.remove('pause');
         clearInterval(interval);
+        count = 1;
         clock.innerHTML = '00:00:00';
     }
 });

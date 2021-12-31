@@ -56,3 +56,7 @@ body {
     border: none;
     cursor: pointer;
 }
+ 
+.counter > .pause{
+    color: red;
+}

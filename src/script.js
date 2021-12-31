@@ -8,6 +8,7 @@ function convertSecondsToHours(seconds){
 let clock = document.querySelector('.clock');
 let count = 1;
 let interval;
+let pause;
 
 function meter(){
     interval = setInterval(function(){
@@ -21,17 +22,21 @@ document.addEventListener('click', function(e){
 
     if(el.classList.contains('start')){
         clock.classList.remove('pause');
+        clearInterval(pause);
         meter();
     }
 
     if(el.classList.contains('pause')){
-        clock.classList.add('pause');
+        pause = setInterval(function(){
+            clock.classList.contains('pause') ? clock.classList.remove('pause') : clock.classList.add('pause');
+        }, 500);
         clearInterval(interval);
     }
 
     if(el.classList.contains('restart')){
         clock.classList.remove('pause');
         clearInterval(interval);
+        clearInterval(pause);
         count = 1;
         clock.innerHTML = '00:00:00';
     }
